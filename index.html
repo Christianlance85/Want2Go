@@ -7,6 +7,11 @@
     <link rel="stylesheet" href="https://unpkg.com/purecss@1.0.1/build/pure-min.css" integrity="sha384-oAOxQR6DkCoMliIh8yFnu25d7Eq/PHS21PClpwjOTeU2jRSq11vu66rf90/cZr47" crossorigin="anonymous">
         <link rel="stylesheet" href="https://unpkg.com/purecss@1.0.1/build/grids-responsive-min.css">
     <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css">
+            <link rel="stylesheet" href="assets/style.css">
+    <script
+    src="https://code.jquery.com/jquery-3.4.1.min.js"
+    integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+    crossorigin="anonymous"></script>
 
 
             <link rel="stylesheet" href="style.css">
@@ -21,29 +26,20 @@
 
         <ul class="pure-menu-list">
             <li class="pure-menu-item pure-menu-selected"><a href="#" class="pure-menu-link">Home</a></li>
-            <li class="pure-menu-item"><a href="#" class="pure-menu-link">Tour</a></li>
-            <li class="pure-menu-item"><a href="#" class="pure-menu-link">Sign Up</a></li>
         </ul>
     </div>
 </div>
-<div class="splash-container" style="height: 100%; width: 100%;"> <img src="assets/nashville.jpeg" style="height: 100%; width: 100%;">
+<div class="splash-container" style="background-image: url(assets/nashville.jpeg); height: 100%;" >
 
-    <div class="splash" > 
+    <div class="splash"> 
         <h1 class="splash-head">Where do you want 2 go?</h1>
         <p class="splash-subhead">
             Lorem ipsum dolor sit amet, consectetur adipisicing elit.
         </p>
         <p>
-            <a href="#" class="pure-button pure-button-primary">Get Started</a>
+            <button class="pure-button pure-button-primary" id="get-Button">Get Started</button>
         </p>
-        <div class="child-two" style="position: fixed; margin-top:25 px; padding-top: 25px;" >
-            <div class="card content 1-box pure-u-2 pure-u-md-2-2 pure-u-sm-4" style="width: 18rem; position: relative;">
-                <img src="..." class="card-img-top" alt="...">
-                <div class="card-body">
-                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                </div>
-            </div>
-        </div>
+       
     </div>
 
 
@@ -52,10 +48,24 @@
 </div>
 
 
-<div class="content-wrapper">
-    <div class="content">
-        <h2 class="content-head is-center">Excepteur sint occaecat cupidatat.</h2>
-        
+<div class="content-wrapper pure">
+
+    <div class="cards">
+
+        <h2 class="content-head is-center pure-menu">Excepteur sint occaecat cupidatat.</h2> 
+
+            <div class="card-Section is-center">
+                <div class="child-two pure-g" style="position: relative; align-content: center;" >
+                        <div class="card content l-box pure-u-1 pure-u-md-1-2 pure-u-lg-1-4" style="width: 18rem; position: relative;">
+                            <img src="" class="card-img-top" alt="...">
+                            <div class="card-body">
+                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                            </div>
+                        </div>
+                </div>
+
+
+        </div>
 
         <div class="pure-g">
 
@@ -63,7 +73,7 @@
             <div class="l-box pure-u-1 pure-u-md-1-2 pure-u-lg-1-4">
 
                 <h3 class="content-subhead">
-                    <i class="fa fa-rocket"></i>
+                    <i class="fa fa-rocket "></i>
                     Get Started Quickly
                 </h3>
                 <p>
