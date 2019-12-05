@@ -1,3 +1,9 @@
+let datePicked; 
+let dates 
+let city = "";   
+let state = "";   
+let apikey = "FOkoiAeq7sbKem57WVLqvUC7tfLQD8Af";
+let queryurl = "https://app.ticketmaster.com/discovery/v2/";
 (function (root) {
     root.YUI_config = {"version":"3.18.1","base":"http:\u002F\u002Fyui.yahooapis.com\u002F3.18.1\u002F","comboBase":"https:\u002F\u002Fyui-s.yahooapis.com\u002Fcombo?","comboSep":"&","root":"3.18.1\u002F","filter":"min","logLevel":"error","combine":true,"patches":[],"maxURLLength":2048,"groups":{"vendor":{"combine":true,"comboBase":"\u002Fcombo\u002F1.18.13?","base":"\u002F","root":"\u002F","modules":{"css-mediaquery":{"path":"vendor\u002Fcss-mediaquery.js"},"handlebars-runtime":{"path":"vendor\u002Fhandlebars.runtime.js"}}},"app":{"combine":true,"comboBase":"\u002Fcombo\u002F1.18.13?","base":"\u002Fjs\u002F","root":"\u002Fjs\u002F"}}};
     root.app || (root.app = {});
@@ -13,3 +19,26 @@
             e.preventDefault();
         }, 'a[href="#"]');
     });
+$(function(){
+$('#get-Button').on('click', function(){
+    console.log('What')
+}
+)
+});
+
+$('#dates').click(function(){
+    $.ajax({
+        type:"GET",
+        url: "https://app.ticketmaster.com/discovery/v2/events/G5diZfkn0B-bh.json?apikey=FOkoiAeq7sbKem57WVLqvUC7tfLQD8Af", 
+        async:true,
+        dataType: "json",
+        
+    });
+    console.log(dates)
+    $(function () {
+        $('#datetimepicker3').datetimepicker({
+            format: 'LT'
+        });
+    });
+});
+
