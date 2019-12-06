@@ -42,3 +42,16 @@ $('#dates').click(function(){
     });
 });
 
+$(document).ready();
+
+$(function() {
+
+    $("#get-Button").on("click", function() {
+        $([document.documentElement, document.body]).animate({
+            scrollTop: $("#search").offset().top
+        }, 2000);
+    }  
+     )
+
+}
+)
