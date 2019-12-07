@@ -1,48 +1,76 @@
+$(document).ready();
 let datePicked; 
 let dates 
 let city = "";   
 let state = "";   
-let apikey = "FOkoiAeq7sbKem57WVLqvUC7tfLQD8Af";
-let queryurl = "https://app.ticketmaster.com/discovery/v2/";
-(function (root) {
-    root.YUI_config = {"version":"3.18.1","base":"http:\u002F\u002Fyui.yahooapis.com\u002F3.18.1\u002F","comboBase":"https:\u002F\u002Fyui-s.yahooapis.com\u002Fcombo?","comboSep":"&","root":"3.18.1\u002F","filter":"min","logLevel":"error","combine":true,"patches":[],"maxURLLength":2048,"groups":{"vendor":{"combine":true,"comboBase":"\u002Fcombo\u002F1.18.13?","base":"\u002F","root":"\u002F","modules":{"css-mediaquery":{"path":"vendor\u002Fcss-mediaquery.js"},"handlebars-runtime":{"path":"vendor\u002Fhandlebars.runtime.js"}}},"app":{"combine":true,"comboBase":"\u002Fcombo\u002F1.18.13?","base":"\u002Fjs\u002F","root":"\u002Fjs\u002F"}}};
-    root.app || (root.app = {});
-    root.app.yui = {"use":function () { return this._bootstrap('use', [].slice.call(arguments)); },"require":function () { this._bootstrap('require', [].slice.call(arguments)); },"ready":function (callback) { this.use(function () { callback(); }); },"_bootstrap":function bootstrap(method, args) { var self = this, d = document, head = d.getElementsByTagName('head')[0], ie = /MSIE/.test(navigator.userAgent), callback = [], config = typeof YUI_config != "undefined" ? YUI_config : {}; function flush() { var l = callback.length, i; if (!self.YUI && typeof YUI == "undefined") { throw new Error("YUI was not injected correctly!"); } self.YUI = self.YUI || YUI; for (i = 0; i < l; i++) { callback.shift()(); } } function decrementRequestPending() { self._pending--; if (self._pending <= 0) { setTimeout(flush, 0); } else { load(); } } function createScriptNode(src) { var node = d.createElement('script'); if (node.async) { node.async = false; } if (ie) { node.onreadystatechange = function () { if (/loaded|complete/.test(this.readyState)) { this.onreadystatechange = null; decrementRequestPending(); } }; } else { node.onload = node.onerror = decrementRequestPending; } node.setAttribute('src', src); return node; } function load() { if (!config.seed) { throw new Error('YUI_config.seed array is required.'); } var seed = config.seed, l = seed.length, i, node; if (!self._injected) { self._injected = true; self._pending = seed.length; } for (i = 0; i < l; i++) { node = createScriptNode(seed.shift()); head.appendChild(node); if (node.async !== false) { break; } } } callback.push(function () { var i; if (!self._Y) { self.YUI.Env.core.push.apply(self.YUI.Env.core, config.extendedCore || []); self._Y = self.YUI(); self.use = self._Y.use; if (config.patches && config.patches.length) { for (i = 0; i < config.patches.length; i += 1) { config.patches[i](self._Y, self._Y.Env._loader); } } } self._Y[method].apply(self._Y, args); }); self.YUI = self.YUI || (typeof YUI != "undefined" ? YUI : null); if (!self.YUI && !self._injected) { load(); } else if (self._pending <= 0) { setTimeout(flush, 0); } return this; }};
-    root.YUI_config || (root.YUI_config = {});
-    root.YUI_config.seed = ["https:\u002F\u002Fyui-s.yahooapis.com\u002Fcombo?3.18.1\u002Fyui\u002Fyui-min.js"];
-    root.YUI_config.groups || (root.YUI_config.groups = {});
-    root.YUI_config.groups.app || (root.YUI_config.groups.app = {});
-    root.YUI_config.groups.app.modules = {"start\u002Fapp":{"path":"start\u002Fapp.js","requires":["handlebars-runtime","yui","base-build","router","pjax-base","view","start\u002Fmodels\u002Fgrid","start\u002Fviews\u002Finput","start\u002Fviews\u002Foutput","start\u002Fviews\u002Fdownload"]},"start\u002Fmodels\u002Fgrid":{"path":"start\u002Fmodels\u002Fgrid.js","requires":["yui","querystring","base-build","model","model-sync-rest","start\u002Fmodels\u002Fmq"]},"start\u002Fmodels\u002Fmq":{"path":"start\u002Fmodels\u002Fmq.js","requires":["css-mediaquery","attribute","base-build","model","model-list"]},"start\u002Fviews\u002Fdownload":{"path":"start\u002Fviews\u002Fdownload.js","requires":["yui","base-build","querystring","view"]},"start\u002Fviews\u002Finput":{"path":"start\u002Fviews\u002Finput.js","requires":["base-build","start\u002Fmodels\u002Fmq","start\u002Fviews\u002Ftab"]},"start\u002Fviews\u002Foutput":{"path":"start\u002Fviews\u002Foutput.js","requires":["base-build","escape","start\u002Fviews\u002Ftab"]},"start\u002Fviews\u002Ftab":{"path":"start\u002Fviews\u002Ftab.js","requires":["yui","base-build","view"]}};
-    }(this));
-    app.yui.use('node-base', 'node-event-delegate', function (Y) {
-        Y.one('body').delegate('click', function (e) {
-            e.preventDefault();
-        }, 'a[href="#"]');
-    });
+let apikey = "QS5PYLoM9kjdMdl969ZTw7z5XJTZz0QA";
+let queryURL = "https://app.ticketmaster.com/discovery/v2/";
+
 $(function(){
-$('#get-Button').on('click', function(){
+$('#search-Field').on('click', function(){
     console.log('What')
-}
-)
-});
-
-$('#dates').click(function(){
     $.ajax({
-        type:"GET",
-        url: "https://app.ticketmaster.com/discovery/v2/events/G5diZfkn0B-bh.json?apikey=FOkoiAeq7sbKem57WVLqvUC7tfLQD8Af", 
-        async:true,
-        dataType: "json",
-        
-    });
-    console.log(dates)
-    $(function () {
-        $('#datetimepicker3').datetimepicker({
-            format: 'LT'
+        url: "https://app.ticketmaster.com/discovery/v1/events.json?apikey=QS5PYLoM9kjdMdl969ZTw7z5XJTZz0QA",
+        method: "GET"
+      }).then(function(result) {
+          console.log(result);
+          var eventDiv = $("<div class='event'>");
+
+          // Storing the rating data
+          var name = response.embedded.events.name;
+
+          // Creating an element to have the rating displayed
+          var pOne = $("<p>").text("Name: " + name);
+
+          // Displaying the rating
+          eventDiv.append(pOne);
+
+          // Storing the release year
+          var urlTicketmaster = response.url;
+
+          // Creating an element to hold the release year
+          var pTwo = $("<p>").text("Dates: " + dates);
+
+          // Displaying the release year
+          eventDiv.append(pTwo);
+
+          // Retrieving the URL for the image
+          var imgURL = response.Poster;
+
+          // Creating an element to hold the image
+          var image = $("<img>").attr("src", imgURL);
+
+          // Appending the image
+          eventDiv.append(image);
+
+          // Putting the entire movie above the previous movies
+          $("#events-view").prepend(eventsDiv);
         });
-    });
+
+  
+
 });
 
-$(document).ready();
+// $('.search-btn').on('click', function(){
+//     $.ajax({
+//         method:"GET",
+//         url: "https://app.ticketmaster.com/discovery/v2/events/G5diZfkn0B-bh.json?apikey=QS5PYLoM9kjdMdl969ZTw7z5XJTZz0QA", 
+        
+//     });
+//     console.log(dates)
+//     function displayEventInfo() {
+
+//         var events = $(this).attr("data-name");
+//         var queryURL = "https://app.ticketmaster.com/discovery/v2/" + events + "QS5PYLoM9kjdMdl969ZTw7z5XJTZz0QA";
+
+//         // Creating an AJAX call for the specific movie button being clicked
+//         $.ajax({
+//           url: queryURL,
+//           method: "GET"
+//         }).then(function(response) {
+// })}});
+
+
 
 $(function() {
 
@@ -54,4 +82,5 @@ $(function() {
      )
 
 }
-)
+)});
+
