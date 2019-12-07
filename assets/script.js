@@ -1,71 +1,55 @@
 $(document).ready();
-let datePicked; 
-let dates 
-let city = "";   
-let state = "";   
-let apikey = "QS5PYLoM9kjdMdl969ZTw7z5XJTZz0QA";
-let queryURL = "https://app.ticketmaster.com/discovery/v2/";
-
 
 $(function(){
 $('#search-Field').on('click', function(){
     console.log('What')
+    $('#events-view').empty();
+    var keyword = $('#searchbar').val();
+    var city = $('#citybar').val();
     $.ajax({
-        url: "https://app.ticketmaster.com/discovery/v1/events.json?apikey=QS5PYLoM9kjdMdl969ZTw7z5XJTZz0QA",
+        url: "https://app.ticketmaster.com/discovery/v2/events.json?apikey=QS5PYLoM9kjdMdl969ZTw7z5XJTZz0QA&keyword=" + keyword +  "&city=" + city,
         method: "GET"
       }).then(function(result) {
           console.log(result);
-          var response = result.embedded.events
-          var eventDiv = $("<div class='event'>");
+          var pFour = $('<p>').text('No Result');
+          if (result._embedded === undefined) {
+              eventDiv.append(pFour);
+              return;
+          }
+          result._embedded.events.slice(0,4).forEach(event => {
+            var eventDiv = $("<div class='event l-box pure-u-1 pure-u-md-1-2 pure-u-lg-1-4'>");
+    
+            var pOne = $("<p>").text("Name: " + event.name);
 
-          // Storing the rating data
-          var name = response.name;
+            eventDiv.append(pOne);
 
-          // Creating an element to have the rating displayed
-          var pOne = $("<p>").text("Name: " + name);
+            var urlTicketmaster = event.url;
 
-          // Displaying the rating
-          eventDiv.append(pOne);
+            var PThree = $("<p>").text("URL: " + urlTicketmaster);
 
-          // Storing the release year
-          var urlTicketmaster = response.url;
+            eventDiv.append(PThree);
 
-          var PThree = $("<p>").text("URL: " + urlTicketmaster);
-          eventDiv.append(PThree);
-          //Add urlTicketmaster variable to a P tag and append it to the eventDiv.
+            var pTwo = $("<p>").text("Dates: " + event.dates);
 
-          // Creating an element to hold the release year
-          var pTwo = $("<p>").text("Dates: " + response.dates);
+            eventDiv.append(pTwo);
 
-          // Displaying the release year
-          eventDiv.append(pTwo);
+            var image = $("<img>").attr("src", event.images[1]);
 
-          // Creating an element to hold the image
-          var image = $("<img>").attr("src", imgURL);
+            eventDiv.append(image);
 
-          // Appending the image
-          eventDiv.append(image);
-
-          // Putting the entire movie above the previous movies
-          $("#events-view").prepend(eventDiv);
+            $("#events-view").prepend(eventDiv);
+          });
+          
+          
         });
-
   
-
 });
-
-
-
-
 $(function() {
-
     $("#get-Button").on("click", function() {
         $([document.documentElement, document.body]).animate({
             scrollTop: $("#search").offset().top
         }, 2000);
     }  
      )
-
 }
 )});
-
