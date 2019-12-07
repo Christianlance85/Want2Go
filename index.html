@@ -14,7 +14,7 @@
     crossorigin="anonymous"></script>
 
 
-            <link rel="stylesheet" href="style.css">
+            <link rel="stylesheet" href="/style.css">
 
 
 </head>
@@ -29,12 +29,26 @@
         </ul>
     </div>
 </div>
-<div class="splash-container" style="background-image: url(assets/nashville.jpeg); height: 100%;" >
+<div class="splash-container" style="background-image: url(./assets/cityscape.jpg); height: 100%; background-repeat: no-repeat; background-size: cover">
 
     <div class="splash"> 
-        <h1 class="splash-head">Where do you want 2 go?</h1>
+        <h1 class="splash-head">Where do you want 2 go?
+            <div class="header2">
+                <form>
+                <h1>Find Everything Near You</h1>
+                <div class="form-box">
+                    <input type="text" class="search-field business"
+                    placeholder="Events, Concerts.." id="searchbar">
+    
+                    <input type="text" class="search-field location"
+                    placeholder="Location" id="searchLocation">
+                    <button class="search-btn" id="search-Field" type="button">Search</button>
+                </div>
+            </form>
+            </div>
+        </h1>
         <p class="splash-subhead">
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+            Made for those who want to go and do
         </p>
         <p>
             <button class="pure-button pure-button-primary" id="get-Button">Get Started</button>
@@ -53,20 +67,9 @@
     <div class="cards">
 
         <h2 id="search" class="content-head is-center pure-menu">Find out what is going on!</h2> 
-            <div class="header2">
-                <form>
-                <h1>Find Everything Near You</h1>
-                <div class="form-box">
-                    <input type="text" class="search-field business"
-                    placeholder="Events, Concerts..">
+            
 
-                    <input type="text" class="search-field location"
-                    placeholder="Location">
-                    <button class="search-btn" id="search-Field" type="button">Search</button>
-                </div>
-            </form>
-
-            <div class="card-Section is-center events-view">
+            <div class="card-Section is-center events-view" id="events-view">
                 <div class="child-two pure-g" style="position: relative; align-content: center;" >
                         <div class="card content l-box pure-u-1 pure-u-md-1-2 pure-u-lg-1-4" style="width: 18rem; position: relative;">
                             <img src="" class="card-img-top" alt="...">
@@ -86,37 +89,37 @@
 
                 <h3 class="content-subhead">
                     <i class="fa fa-rocket "></i>
-                    Get Started Quickly
+                    Explore
                 </h3>
                 <p>
-                    Phasellus eget enim eu lectus faucibus vestibulum. Suspendisse sodales pellentesque elementum.
+                    New places and new things
                 </p>
             </div>
             <div class="l-box pure-u-1 pure-u-md-1-2 pure-u-lg-1-4">
                 <h3 class="content-subhead">
                     <i class="fa fa-mobile"></i>
-                    Responsive Layouts
+                    Discover
                 </h3>
                 <p>
-                    Phasellus eget enim eu lectus faucibus vestibulum. Suspendisse sodales pellentesque elementum.
+                    Travel new roads and blaze new trails
                 </p>
             </div>
             <div class="l-box pure-u-1 pure-u-md-1-2 pure-u-lg-1-4">
                 <h3 class="content-subhead">
                     <i class="fa fa-th-large"></i>
-                    Modular
+                    Play
                 </h3>
                 <p>
-                    Phasellus eget enim eu lectus faucibus vestibulum. Suspendisse sodales pellentesque elementum.
+                    You work hard so why not play hard, too?
                 </p>
             </div>
             <div class="l-box pure-u-1 pure-u-md-1-2 pure-u-lg-1-4">
                 <h3 class="content-subhead">
                     <i class="fa fa-check-square-o"></i>
-                    Plays Nice
+                    Experience
                 </h3>
                 <p>
-                    Phasellus eget enim eu lectus faucibus vestibulum. Suspendisse sodales pellentesque elementum.
+                    Memories that last a life time with family and friends
                 </p>
             </div>
         </div>
@@ -171,8 +174,7 @@
 
                 <h4>More Information</h4>
                 <p>
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                    tempor incididunt ut labore et dolore magna aliqua.
+                    Please include any questions you may have regarding a specific event or date, and we will be sure to 
                 </p>
             </div>
         </div>

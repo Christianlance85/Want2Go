@@ -5,7 +5,8 @@ let city = "";
 let state = "";   
 let apikey = "QS5PYLoM9kjdMdl969ZTw7z5XJTZz0QA";
 let queryURL = "https://app.ticketmaster.com/discovery/v2/";
-
+$("#searchbar").val();
+$("#searchLocation").val();
 $(function(){
 $('#search-Field').on('click', function(){
     console.log('What')
@@ -14,73 +15,40 @@ $('#search-Field').on('click', function(){
         method: "GET"
       }).then(function(result) {
           console.log(result);
-          var eventDiv = $("<div class='event'>");
-
-          // Storing the rating data
-          var name = response.embedded.events.name;
-
-          // Creating an element to have the rating displayed
-          var pOne = $("<p>").text("Name: " + name);
-
-          // Displaying the rating
-          eventDiv.append(pOne);
-
-          // Storing the release year
-          var urlTicketmaster = response.url;
-
-          // Creating an element to hold the release year
-          var pTwo = $("<p>").text("Dates: " + dates);
-
-          // Displaying the release year
-          eventDiv.append(pTwo);
-
-          // Retrieving the URL for the image
-          var imgURL = response.Poster;
-
-          // Creating an element to hold the image
-          var image = $("<img>").attr("src", imgURL);
-
-          // Appending the image
-          eventDiv.append(image);
-
-          // Putting the entire movie above the previous movies
-          $("#events-view").prepend(eventsDiv);
+          result._embedded.events.forEach(event => {
+            var eventDiv = $("<div class='event'>");
+    
+            // Creating an element to have the rating displayed
+            var pOne = $("<p>").text("Name: " + event.name);
+            // Displaying the rating
+            eventDiv.append(pOne);
+            // Storing the release year
+            var urlTicketmaster = event.url;
+            var PThree = $("<p>").text("URL: " + urlTicketmaster);
+            eventDiv.append(PThree);
+            //Add urlTicketmaster variable to a P tag and append it to the eventDiv.
+            // Creating an element to hold the release year
+            var pTwo = $("<p>").text("Dates: " + event.dates);
+            // Displaying the release year
+            eventDiv.append(pTwo);
+            // Creating an element to hold the image
+            var image = $("<img>").attr("src", event.imgURL);
+            // Appending the image
+            eventDiv.append(image);
+            // Putting the entire movie above the previous movies
+            $("#events-view").prepend(eventDiv);
+          });
+          
+          
         });
-
   
-
 });
-
-// $('.search-btn').on('click', function(){
-//     $.ajax({
-//         method:"GET",
-//         url: "https://app.ticketmaster.com/discovery/v2/events/G5diZfkn0B-bh.json?apikey=QS5PYLoM9kjdMdl969ZTw7z5XJTZz0QA", 
-        
-//     });
-//     console.log(dates)
-//     function displayEventInfo() {
-
-//         var events = $(this).attr("data-name");
-//         var queryURL = "https://app.ticketmaster.com/discovery/v2/" + events + "QS5PYLoM9kjdMdl969ZTw7z5XJTZz0QA";
-
-//         // Creating an AJAX call for the specific movie button being clicked
-//         $.ajax({
-//           url: queryURL,
-//           method: "GET"
-//         }).then(function(response) {
-// })}});
-
-
-
 $(function() {
-
     $("#get-Button").on("click", function() {
         $([document.documentElement, document.body]).animate({
             scrollTop: $("#search").offset().top
         }, 2000);
     }  
      )
-
 }
 )});
-
