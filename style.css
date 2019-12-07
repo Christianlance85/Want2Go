@@ -17,9 +17,9 @@ h4,
 h5,
 h6,
 label {
-    color: #34495e;
+	color: #34495e;
+	
 }
-
 .pure-img-responsive {
     max-width: 100%;
     height: auto;
