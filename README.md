@@ -11,7 +11,9 @@ Must meet good quality coding standards
 Does not use alerts, confirms or prompts (look into modals)
 Must be deployed to GitHub Pages
 
-We chose to create a website that would help people find events nearby to attend. 
-Allows users to choose events Nationwide.
-Choose by event or city
+We chose to create a website that would help people find events nearby to attend. Allow users to choose events Nationwide.
+Also choose events by event or location.
+
+
+
 
