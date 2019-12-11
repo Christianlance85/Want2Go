@@ -5,34 +5,22 @@
 }
 body {
     line-height: 1.7em;
-    color: #7f8c8d;
+    color: #7F8C8D;
     font-size: 13px;
 }
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-label {
-    color: #34495e;
-}
-
+    
 .pure-img-responsive {
     max-width: 100%;
     height: auto;
 }
-
 .l-box {
     padding: 1em;
 }
-
 .l-box-lrg {
     padding: 2em;
     border-bottom: 1px solid rgba(0,0,0,0.1);
 }
-
 .is-center {
     text-align: center;
 }
@@ -41,7 +29,6 @@ label {
     font-weight: bold;
     font-size: 100%;
 }
-
 .pure-form input[type] {
     border: 2px solid #ddd;
     box-shadow: none;
@@ -49,44 +36,44 @@ label {
     width: 100%;
     margin-bottom: 1em;
 }
-
 .pure-button {
-    background-color: #1f8dd6;
-    color: white;
-    padding: 0.5em 2em;
-    border-radius: 5px;
+    height: 50px;
+    width: 150px;
+    background: #FFEB3B;
+    border: none;
+    color: #000;
+    border-radius: 25px;
 }
-
+.pure-button:hover{
+        background: #FFC107;
+        cursor: pointer;
+}
 a.pure-button-primary {
     background: white;
-    color: #1f8dd6;
+    color: #1F8DD6;
     border-radius: 5px;
     font-size: 120%;
 }
-
 .home-menu {
     padding: 0.5em;
     text-align: center;
     box-shadow: 0 1px 1px rgba(0,0,0, 0.10);
 }
 .home-menu {
-    background: #2d3e50;
+    background: #2D3E50;
 }
 .pure-menu.pure-menu-fixed {
     border-bottom: none;
     z-index: 4;
 }
-
 .home-menu .pure-menu-heading {
     color: white;
     font-weight: 400;
     font-size: 120%;
 }
-
 .home-menu .pure-menu-selected a {
     color: white;
 }
-
 .home-menu a {
     color: #6FBEF3;
 }
@@ -96,28 +83,24 @@ a.pure-button-primary {
     border: none;
     color: #AECFE5;
 }
-
 .splash-container {
-    background: #1f8dd6;
-    z-index: 1;
+    /* z-index: 1; */
     overflow: hidden;
     width: 100%;
-    height: 30%;
+    height: 100%;
     top: 0;
     left: 0;
     position: fixed !important;
 }
-
 .splash {
-    width: 80%;
+    width: 100%;
     height: 30%;
     margin: auto;
-    position: absolute;
+    position: relative;
     top: 100px; left: 0; bottom: 0; right: 0;
     text-align: center;
     text-transform: uppercase;
 }
-
 .splash-head {
     font-size: 20px;
     font-weight: bold;
@@ -128,50 +111,48 @@ a.pure-button-primary {
     border-radius: 5px;
     line-height: 1em;
 }
-
 .splash-subhead {
-    color: white;
+    color: rgb(231, 191, 13);
     letter-spacing: 0.05em;
-    opacity: 0.8;
+    opacity: 1.5;
+    font-family: 'Permanent Marker', cursive;
+    font-size: x-large;
+    background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5));
+    padding-top: 20px;
+    padding-bottom: 20px;
 }
-
 .content-wrapper {
     position: absolute;
     top: 87%;
     width: 100%;
     min-height: 12%;
-    z-index: 2;
-    background: white;
-
+    /* z-index: 2; */
+    /* background: white; */
 }
-
 .content {
     padding: 1em 1em 3em;
+    color: #FFC107;
 }
-
 .content-head {
     font-weight: 400;
     text-transform: uppercase;
     letter-spacing: 0.1em;
     margin: 2em 0 1em;
+    padding-left: 30px;
 }
-
 .content-head-ribbon {
     color: white;
 }
-
 .content-subhead {
-    color: #1f8dd6;
+    color: #1F8DD6;
 }
     .content-subhead i {
         margin-right: 7px;
     }
-
 .ribbon {
-    background: #2d3e50;
+    background: #2D3E50;
     color: #aaa;
 }
-
 .footer {
     background: #111;
     position: fixed;
@@ -185,39 +166,35 @@ height:150px;
     body {
         font-size: 16px;
     }
-
     .home-menu {
         text-align: left;
     }
         .home-menu ul {
             float: right;
         }
-
     .splash {
         width: 50%;
         height: 50%;
     }
-
     .splash-head {
         font-size: 250%;
     }
-
     .l-box-lrg {
         border: none;
     }
-
 }
-
 @media (min-width: 78em) {
     .splash-head {
         font-size: 300%;
     }
 }
-
+#events-view{
+    color: rgb(231, 191, 13);
+}
 .header2
 {
-    height: 100vh;
-    background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url(nashville.jpeg);
+    height: 400px;
+    background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url(cityscape.jpg);
     background-size: cover;
     background-position: center;
     display: flex;
@@ -226,13 +203,13 @@ height:150px;
     font-family: sans-serif;
 }
 h1
-{
+/* {
     color: #fff;
     margin-bottom: 70px;
     font-size: 45px;
     letter-spacing: 2px;
     text-align: center;
-}
+} */
 .search-field
 {
     height: 50px;
@@ -253,22 +230,41 @@ h1
 {
     height: 50px;
     width: 150px;
-    background: #ffeb3b;
+    background: #FFEB3B;
     border: none;
     color: #000;
     border-radius: 25px;
 }
 .search-btn:hover{
-    background: #ffc107;
+    background: #FFC107;
     cursor: pointer;
 }
 .form-box
 {
     background: rgba(0,0,0,0.5);
     padding: 30px;
+    border-radius: 25px;
 
 }
-.content-wrapper
-{
-    background-image: url(nashville.jpeg);
+#searchmaps-btn:hover{
+    background: #FFC107;
+    cursor: pointer;
+}
+#searchmaps{
+    border-radius: 25px;
+}
+.container-fluid{
+    /* background-color: #2D3E50; */
+    color: #FFC107;
+}
+#map {
+    height: 400px;  /* The height is 400 pixels */
+    width: 100%;  /* The width is the width of the web page */
+   }
+#goldentext{
+    color: #FFC107;
+}
+img{
+    height: 40px;
+    width: 40px;
 }
