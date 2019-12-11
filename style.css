@@ -8,16 +8,8 @@ body {
     color: #7F8C8D;
     font-size: 13px;
 }
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-label {
-    color: #34495E;
+
     
-}
 .pure-img-responsive {
     max-width: 100%;
     height: auto;
@@ -45,10 +37,16 @@ label {
     margin-bottom: 1em;
 }
 .pure-button {
-    background-color: #1F8DD6;
-    color: white;
-    padding: 0.5em 2em;
-    border-radius: 5px;
+    height: 50px;
+    width: 150px;
+    background: #FFEB3B;
+    border: none;
+    color: #000;
+    border-radius: 25px;
+}
+.pure-button:hover{
+        background: #FFC107;
+        cursor: pointer;
 }
 a.pure-button-primary {
     background: white;
@@ -98,7 +96,7 @@ a.pure-button-primary {
     width: 100%;
     height: 30%;
     margin: auto;
-    position: absolute;
+    position: relative;
     top: 100px; left: 0; bottom: 0; right: 0;
     text-align: center;
     text-transform: uppercase;
@@ -114,9 +112,14 @@ a.pure-button-primary {
     line-height: 1em;
 }
 .splash-subhead {
-    color: white;
+    color: rgb(231, 191, 13);
     letter-spacing: 0.05em;
-    opacity: 0.8;
+    opacity: 1.5;
+    font-family: 'Permanent Marker', cursive;
+    font-size: x-large;
+    background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5));
+    padding-top: 20px;
+    padding-bottom: 20px;
 }
 .content-wrapper {
     position: absolute;
@@ -124,16 +127,18 @@ a.pure-button-primary {
     width: 100%;
     min-height: 12%;
     /* z-index: 2; */
-    background: white;
+    /* background: white; */
 }
 .content {
     padding: 1em 1em 3em;
+    color: #FFC107;
 }
 .content-head {
     font-weight: 400;
     text-transform: uppercase;
     letter-spacing: 0.1em;
     margin: 2em 0 1em;
+    padding-left: 30px;
 }
 .content-head-ribbon {
     color: white;
@@ -184,7 +189,7 @@ height:150px;
     }
 }
 #events-view{
-    color: white;
+    color: rgb(231, 191, 13);
 }
 .header2
 {
@@ -239,6 +244,7 @@ h1
     background: rgba(0,0,0,0.5);
     padding: 30px;
     border-radius: 25px;
+
 }
 #searchmaps-btn:hover{
     background: #FFC107;
@@ -247,81 +253,18 @@ h1
 #searchmaps{
     border-radius: 25px;
 }
+.container-fluid{
+    /* background-color: #2D3E50; */
+    color: #FFC107;
+}
 #map {
-	height: 400px;  /* The height is 400 pixels */
-	width: 100%;  /* The width is the width of the web page */
+    height: 400px;  /* The height is 400 pixels */
+    width: 100%;  /* The width is the width of the web page */
    }
-   #description {
-	font-family: Roboto;
-	font-size: 15px;
-	font-weight: 300;
-  }
-
-  #infowindow-content .title {
-	font-weight: bold;
-  }
-
-  #infowindow-content {
-	display: none;
-  }
-
-  #map #infowindow-content {
-	display: inline;
-  }
-
-  .pac-card {
-	margin: 10px 10px 0 0;
-	border-radius: 2px 0 0 2px;
-	box-sizing: border-box;
-	-moz-box-sizing: border-box;
-	outline: none;
-	box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
-	background-color: #fff;
-	font-family: Roboto;
-  }
-
-  #pac-container {
-	padding-bottom: 12px;
-	margin-right: 12px;
-  }
-
-  .pac-controls {
-	display: inline-block;
-	padding: 5px 11px;
-  }
-
-  .pac-controls label {
-	font-family: Roboto;
-	font-size: 13px;
-	font-weight: 300;
-  }
-
-  #pac-input {
-	background-color: #fff;
-	font-family: Roboto;
-	font-size: 15px;
-	font-weight: 300;
-	margin-left: 12px;
-	padding: 0 11px 0 13px;
-	text-overflow: ellipsis;
-	width: 400px;
-  }
-
-  #pac-input:focus {
-	border-color: #4d90fe;
-  }
-
-  #title {
-	color: #fff;
-	background-color: #4d90fe;
-	font-size: 25px;
-	font-weight: 500;
-	padding: 6px 12px;
-  }
-  #target {
-	width: 345px;
-  }
-  img{
-	  height: 40px;
-	  width: 40px;
-  }
+#goldentext{
+    color: #FFC107;
+}
+img{
+    height: 40px;
+    width: 40px;
+}
