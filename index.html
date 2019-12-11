@@ -12,17 +12,18 @@
     integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
     crossorigin="anonymous"></script>
             <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css?family=Permanent+Marker&display=swap" rel="stylesheet">
 </head>
 <body>
 <div class="header">
     <div class="home-menu pure-menu pure-menu-horizontal pure-menu-fixed">
         <a class="pure-menu-heading" href="">Want2Go</a>
         <ul class="pure-menu-list">
-            <li class="pure-menu-item pure-menu-selected"><a href="#" class="pure-menu-link">Home</a></li>
+            <li class="pure-menu-item pure-menu-selected"><a href="#" class="pure-menu-link"></a></li>
         </ul>
     </div>
 </div>
-<div class="splash-container" style="background-image: url(assets/nashville.jpeg); height: 100%;" >
+<div class="splash-container" style="background-image: url(assets/cityscape.jpg); height: 100%;" ></div>
     <div class="splash"> 
         <h1 class="splash-head">Where do you want 2 go?</h1>
         <p class="splash-subhead">
@@ -33,13 +34,12 @@
         </p>
        
     </div>
-    
-</div>
+
 <div id="events-section">
 <div class="content-wrapper pure">
     <div class="cards">
-        <h2 id="search" class="content-head is-center pure-menu">Find out what is going on!</h2> 
-            <div class="header2">
+        <h2 id="search" class="content-head is-center pure-menu"></h2> 
+            <div id="goldentext" class="header2">
                 <form>
                 <h1>Find Everything Near You</h1>
                 <div class="form-box">
@@ -60,47 +60,20 @@
 </div>
     <div class="ribbon l-box-lrg pure-g">
         <div class="l-box-lrg is-center pure-u-1 pure-u-md-1-2 pure-u-lg-2-5">
-            <img width="300" alt="File Icons" class="pure-img-responsive" src="/img/common/file-icons.png">
+            <img width="300" alt="File Icons" class="pure-img-responsive" src="/assets/friends1.jpg">
         </div>
         <div class="pure-u-1 pure-u-md-1-2 pure-u-lg-3-5">
-            <h2 class="content-head content-head-ribbon">Laboris nisi ut aliquip.</h2>
+            <h2 class="content-head content-head-ribbon">Wanna know more?</h2>
             <p>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-                consequat. Duis aute irure dolor.
+                Looking for more? You can use the map below to see what is surrounding your event location.
+                Find great restaurants to grab a quick bite before or after that concert!
+                Decide on a local bar to grab drinks with friends after the game!
+                Communicate a common meeting spot for your group to rendezvous before going into the event!
+                By utilizing our map, you can find whatever you need!
             </p>
         </div>
     </div>
-    <!-- <div class="content">
-        <h2 class="content-head is-center">Need help planning your trip?</h2>
-        <div class="pure-g">
-            <div class="l-box-lrg pure-u-1 pure-u-md-2-5">
-                <form class="pure-form pure-form-stacked">
-                    <fieldset>
-                        <label for="name">Your Name</label>
-                        <input id="name" type="text" placeholder="Your Name">
-                        <label for="email">Your Email</label>
-                        <input id="email" type="email" placeholder="Your Email">
-                        <label for="text">Description of issue</label>
-                        <input id="text" type="text" placeholder="My issue is...">
-                        <button type="submit" class="pure-button">Send Ticket</button>
-                    </fieldset>
-                </form>
-            </div>
-            <div class="l-box-lrg pure-u-1 pure-u-md-3-5">
-                <h4>Contact Us</h4>
-                <p>
-                    Please fill out the form to your left and we will get back
-                    with you in a timely fashion.
-                </p>
-                <h4>More Information</h4>
-                <p>
-                    Please include any questions you may have regarding a specific event or date, and we will be sure to 
-                </p>
-            </div>
-        </div>
-    </div> -->
+    
           <div class="container-fluid">
                 <div class="row">
                   <div class="col">
@@ -110,16 +83,17 @@
                 <div class="row">
                   <div class="col">
                       <div class="form-box">
-                            <input class="form-control" id="search" type="text" placeholder="Search..."/>
-                            <div id="map"></div>
-                    
+                    <input class="search-field" id="searchmaps" type="text" placeholder="Search..."/>
+                    <button class="search-btn" id="searchmaps-btn" type="button">Search</button>
+
+                    <div id="map">
                         </div>
                     </div>
                    </div>
                   </div>
                 </div>
             <div class="content">
-        <h2 class="content-head is-center">Need help planning your trip?</h2>
+        <h2 class="content-head">Need help planning your trip?</h2>
         <div class="pure-g">
             <div class="l-box-lrg pure-u-1 pure-u-md-2-5">
                 <form class="pure-form pure-form-stacked">
@@ -134,22 +108,14 @@
                     </fieldset>
                 </form>
             </div>
-            <div class="l-box-lrg pure-u-1 pure-u-md-3-5">
-                <h4>Contact Us</h4>
-                <p>
-                    Please fill out the form to your left and we will get back
-                    with you in a timely fashion.
-                </p>
-                <h4>More Information</h4>
-                <p>
-                    Please include any questions you may have regarding a specific event or date, and we will be sure to 
-                </p>
-            </div>
+         
         </div>
     </div> 
-
-    <div class="footer l-box is-center">
-        Use our tool to help you pick the perfect night out in middle Tennessee!
+             <script src="https://maps.googleapis.com/maps/api/js?callback=createMap&key=AIzaSyAsktPnUPotecN9ClIrAe8wUk3Y6d_q6sE&libraries=places" async defer></script>
+             <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAsktPnUPotecN9ClIrAe8wUk3Y6d_q6sE&callback=initMap"
+             async defer></script>    
+             <div class="footer l-box is-center">
+    
     </div>
 </div>
 <script src="https://maps.googleapis.com/maps/api/js?callback=createMap&key=AIzaSyAsktPnUPotecN9ClIrAe8wUk3Y6d_q6sE&libraries=places" async defer></script>
