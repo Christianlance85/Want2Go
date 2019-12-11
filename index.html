@@ -1,4 +1,15 @@
-<!doctype html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
 <html lang="en">
 <head>
     <meta charset="utf-8">
@@ -44,11 +55,9 @@
                 <h1>Find Everything Near You</h1>
                 <div class="form-box">
                     <input type="text" class="search-field business" id="searchbar"
-                    placeholder="Events, Concerts..">
+                    placeholder="Events, Concerts.." style="color: black;">
                     <input type="text" class="search-field location" id="citybar"
-                    placeholder="City">
-                    <input type="text" class="search-field date" id="datebar"
-                    placeholder="mm/dd/yyyy"><span class="input-group-addon">
+                    placeholder="City" style="color: black;">
                     <button class="search-btn" id="search-Field" type="button">Search</button>
                 </div>
             </form>
@@ -73,47 +82,47 @@
             </p>
         </div>
     </div>
-    
+    <div class="row">
+            <div class="col">
+                <div class="form-box">
+                      <input id="pac-input" class="controls" type="text" placeholder="Search Box" style="color: black;">
+                  <div id="map"></div>
           <div class="container-fluid">
                 <div class="row">
                   <div class="col">
                     <h1 class="display-4">Nearby Places</h1>
+                    <div class="l-box-lrg pure-u-1 pure-u-md-2-5">
+                            <form class="pure-form pure-form-stacked">
+                                <fieldset>
+                                    <label for="name">Your Name</label>
+                                    <input id="name" type="text" placeholder="Your Name">
+                                    <label for="email">Your Email</label>
+                                    <input id="email" type="email" placeholder="Your Email">
+                                    <label for="text">Description of issue</label>
+                                    <input id="text" type="text" placeholder="My issue is...">
+                                    <button type="submit" class="pure-button">Send Ticket</button>
+                                </fieldset>
+                            </form>
+                        </div>
+                     
+                    </div>
                   </div>
                 </div>
                 <div class="row">
-                  <div class="col">
-                      <div class="form-box">
-                            <input id="pac-input" class="controls" type="text" placeholder="Search Box">
-                        <div id="map"></div>
-                        </div>
-                    </div>
-                   </div>
                   </div>
                 </div>
+
             <div class="content">
-        <h2 class="content-head">Need help planning your trip?</h2>
+
         <div class="pure-g">
-            <div class="l-box-lrg pure-u-1 pure-u-md-2-5">
-                <form class="pure-form pure-form-stacked">
-                    <fieldset>
-                        <label for="name">Your Name</label>
-                        <input id="name" type="text" placeholder="Your Name">
-                        <label for="email">Your Email</label>
-                        <input id="email" type="email" placeholder="Your Email">
-                        <label for="text">Description of issue</label>
-                        <input id="text" type="text" placeholder="My issue is...">
-                        <button type="submit" class="pure-button">Send Ticket</button>
-                    </fieldset>
-                </form>
-            </div>
-         
-        </div>
+
     </div> 
     <div class="footer l-box is-center">
+
     
         </div>
     </div> 
- <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAsktPnUPotecN9ClIrAe8wUk3Y6d_q6sE&libraries=places&callback=initAutocomplete"async defer></script>
+ <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBrsyS2Cng3ehu8pd6wsA9OMYCZSMF5ELo&libraries=places&callback=initAutocomplete"async defer></script>
 <script src="assets/script.js"></script>
 </body>
 </html>
