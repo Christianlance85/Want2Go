@@ -5,11 +5,10 @@ $(function() {
       $("#events-view").empty();
       var keyword = $("#searchbar").val();
       var city = $("#citybar").val();
-      var dates = $("#datebar").val();
       $.ajax({
         url:
           "https://app.ticketmaster.com/discovery/v2/events.json?apikey=QS5PYLoM9kjdMdl969ZTw7z5XJTZz0QA&keyword=" +
-          keyword + "&city=" + city + "&dates" + dates,
+          keyword + "&city=" + city,
         method: "GET"
       }).then(function(result) {
         console.log(result);
@@ -30,9 +29,9 @@ $(function() {
           eventDiv.append(PThree);
           var pTwo = $("<p>").text("Dates: " + event.dates.start.localDate);
           eventDiv.append(pTwo);
-          var pFive = $("<p>").text("Location: " + event.venues);
+          var pFive = $("<p>").text("Location: " + event.postalCode);
           eventDiv.append(pFive);
-          var image = $("<img>").attr("src", event.images[0].url);
+          var image = $("<img>").attr("src", event.venues);
           eventDiv.prepend(image);
           $("#events-view").prepend(eventDiv);
         });
