@@ -338,3 +338,7 @@ img{
   #target {
 	width: 345px;
   }
+img.pure-img-responsive{
+    width: 100%;
+    height: auto;
+}
