@@ -339,6 +339,6 @@ img{
 	width: 345px;
   }
 img.pure-img-responsive{
-    width: 100%;
+    width: 80%;
     height: auto;
 }
