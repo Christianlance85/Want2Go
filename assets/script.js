@@ -1,52 +1,55 @@
 $(document).ready();
 
-$(function () {
-    $('#search-Field').on('click', function () {
-        $('#events-view').empty();
-        var keyword = $('#searchbar').val();
-        var city = $('#citybar').val();
-        var dates = $('#datebar').val();
-        $.ajax({
-            url: "https://app.ticketmaster.com/discovery/v2/events.json?apikey=QS5PYLoM9kjdMdl969ZTw7z5XJTZz0QA&keyword=" + keyword + "&city=" + city + "&dates" + dates,
-            method: "GET"
-        }).then(function (result) {
-            console.log(result);
-            var pFour = $('<p>').text('No Result');
-            if (result._embedded === undefined) {
-                eventDiv.append(pFour);
-                return;
-            }
-            result._embedded.events.slice(0, 4).forEach(event => {
-                console.log(event)
-                var eventDiv = $("<div class='event l-box pure-u-1 pure-u-md-1-2 pure-u-lg-1-4'>");
-
-                var pOne = $("<p>").text("Name: " + event.name);
-                eventDiv.append(pOne);
-                var urlTicketmaster = event.url;
-                var PThree = $("<p>").attr("link" + urlTicketmaster);
-                eventDiv.append(PThree);
-                var pTwo = $("<p>").text("Dates: " + event.dates.start.dateTime);
-                eventDiv.append(pTwo);
-                var image = $("<img>").attr("src", event.images[0].url);
-                eventDiv.prepend(image);
-                $("#events-view").prepend(eventDiv);
-            });
-
-
-
-        });
-
-    });
-    $(function () {
-        $("#get-Button").on("click", function () {
-            $([document.documentElement, document.body]).animate({
-                scrollTop: $("#search").offset().top
-            }, 2000);
+$(function() {
+    $("#search-Field").on("click", function() {
+      $("#events-view").empty();
+      var keyword = $("#searchbar").val();
+      var city = $("#citybar").val();
+      var dates = $("#datebar").val();
+      $.ajax({
+        url:
+          "https://app.ticketmaster.com/discovery/v2/events.json?apikey=QS5PYLoM9kjdMdl969ZTw7z5XJTZz0QA&keyword=" +
+          keyword + "&city=" + city + "&dates" + dates,
+        method: "GET"
+      }).then(function(result) {
+        console.log(result);
+        var pFour = $("<p>").text("No Result");
+        if (result._embedded === undefined) {
+          eventDiv.append(pFour);
+          return;
         }
-        )
-    }
-    )
-});
+        result._embedded.events.slice(0, 4).forEach(event => {
+            console.log(event);
+          var eventDiv = $(
+            "<div class='event l-box pure-u-1 pure-u-md-1-2 pure-u-lg-1-4'>"
+          );
+          var pOne = $("<p>").text("Name: " + event.name);
+          eventDiv.append(pOne);
+          var urlTicketmaster = event.url;
+          var PThree = $("<p>").attr("link" + urlTicketmaster);
+          eventDiv.append(PThree);
+          var pTwo = $("<p>").text("Dates: " + event.dates.start.localDate);
+          eventDiv.append(pTwo);
+          var pFive = $("<p>").text("Location: " + event.venues);
+          eventDiv.append(pFive);
+          var image = $("<img>").attr("src", event.images[0].url);
+          eventDiv.prepend(image);
+          $("#events-view").prepend(eventDiv);
+        });
+      });
+    });
+    
+    $(function() {
+      $("#get-Button").on("click", function() {
+        $([document.documentElement, document.body]).animate(
+          {
+            scrollTop: $("#search").offset().top
+          },
+          2000
+        );
+      });
+    });
+  });
 let map
 function createMap() {
     var options = {
