@@ -29,9 +29,9 @@ $(function() {
           eventDiv.append(PThree);
           var pTwo = $("<p>").text("Dates: " + event.dates.start.localDate);
           eventDiv.append(pTwo);
-          var pFive = $("<p>").text("Location: " + event.postalCode);
+          var pFive = $("<p>").text("Location: " + event._embedded.venues[0].name);
           eventDiv.append(pFive);
-          var image = $("<img>").attr("src", event.venues);
+          var image = $("<img>").attr("src", event.images[0].url);
           eventDiv.prepend(image);
           $("#events-view").prepend(eventDiv);
         });
