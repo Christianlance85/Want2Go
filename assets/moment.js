@@ -2676,11 +2676,6 @@
         }
     );
 
-    // Pick a moment m from moments so that m[fn](other) is true for all
-    // other. This relies on the function fn to be transitive.
-    //
-    // moments should either be an array of moment objects or an array, whose
-    // first element is an array of moment objects.
     function pickBy(fn, moments) {
         var res, i;
         if (moments.length === 1 && isArray(moments[0])) {
@@ -2698,7 +2693,6 @@
         return res;
     }
 
-    // TODO: Use [].sort instead?
     function min () {
         var args = [].slice.call(arguments, 0);
 
@@ -2728,7 +2722,7 @@
         for (var i = 0; i < ordering.length; ++i) {
             if (m[ordering[i]]) {
                 if (unitHasDecimal) {
-                    return false; // only allow non-integers for smallest unit
+                    return false; 
                 }
                 if (parseFloat(m[ordering[i]]) !== toInt(m[ordering[i]])) {
                     unitHasDecimal = true;
@@ -2761,18 +2755,12 @@
 
         this._isValid = isDurationValid(normalizedInput);
 
-        // representation for dateAddRemove
         this._milliseconds = +milliseconds +
-            seconds * 1e3 + // 1000
-            minutes * 6e4 + // 1000 * 60
-            hours * 1000 * 60 * 60; //using 1000 * 60 * 60 instead of 36e5 to avoid floating point rounding errors https://github.com/moment/moment/issues/2978
-        // Because of dateAddRemove treats 24 hours as different from a
-        // day when working around DST, we need to store them separately
+            seconds * 1e3 +
+            minutes * 6e4 + 
+            hours * 1000 * 60 * 60; 
         this._days = +days +
             weeks * 7;
-        // It is impossible to translate months into days without knowing
-        // which months you are are talking about, so we have to store
-        // it separately.
         this._months = +months +
             quarters * 3 +
             years * 12;
@@ -2796,7 +2784,6 @@
         }
     }
 
-    // FORMATTING
 
     function offset (token, separator) {
         addFormatToken(token, 0, 0, function () {
@@ -2813,7 +2800,6 @@
     offset('Z', ':');
     offset('ZZ', '');
 
-    // PARSING
 
     addRegexToken('Z',  matchShortOffset);
     addRegexToken('ZZ', matchShortOffset);
@@ -2821,12 +2807,6 @@
         config._useUTC = true;
         config._tzm = offsetFromString(matchShortOffset, input);
     });
-
-    // HELPERS
-
-    // timezone chunker
-    // '+10:00' > ['10',  '00']
-    // '-1530'  > ['-15', '30']
     var chunkOffset = /([\+\-]|\d\d)/gi;
 
     function offsetFromString(matcher, string) {
@@ -2845,13 +2825,12 @@
           parts[0] === '+' ? minutes : -minutes;
     }
 
-    // Return a moment from input, that is local/utc/zone equivalent to model.
     function cloneWithOffset(input, model) {
         var res, diff;
         if (model._isUTC) {
             res = model.clone();
             diff = (isMoment(input) || isDate(input) ? input.valueOf() : createLocal(input).valueOf()) - res.valueOf();
-            // Use low-level api, because this fn is low-level api.
+ 
             res._d.setTime(res._d.valueOf() + diff);
             hooks.updateOffset(res, false);
             return res;
