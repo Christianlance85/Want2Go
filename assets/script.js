@@ -1,5 +1,18 @@
 $(document).ready();
 
+var pTop = $( "<div class='time l-box pure-u-1 pure-u-md-1-2 pure-u-lg-1-4'>")
+const m = moment();
+console.log(m.format('dddd'));
+
+
+
+
+$(function () {
+    var pTop = $('<p>').text('Date: ' + m.format('dddd'));
+
+    $('.heada').append(pTop);
+    console.log(now);
+});
 $(function() {
     $("#search-Field").on("click", function() {
       $("#events-view").empty();
@@ -196,19 +209,15 @@ $(function() {
       ]
     });
   
-    // Create the search box and link it to the UI element.
     var input = document.getElementById('pac-input');
     var searchBox = new google.maps.places.SearchBox(input);
     map.controls[google.maps.ControlPosition.TOP_LEFT].push(input);
   
-    // Bias the SearchBox results towards current map's viewport.
     map.addListener('bounds_changed', function() {
       searchBox.setBounds(map.getBounds());
     });
   
     var markers = [];
-    // Listen for the event fired when the user selects a prediction and retrieve
-    // more details for that place.
     searchBox.addListener('places_changed', function() {
       var places = searchBox.getPlaces();
   
@@ -216,13 +225,11 @@ $(function() {
         return;
       }
   
-      // Clear out the old markers.
       markers.forEach(function(marker) {
         marker.setMap(null);
       });
       markers = [];
   
-      // For each place, get the icon, name and location.
       var bounds = new google.maps.LatLngBounds();
       places.forEach(function(place) {
         if (!place.geometry) {
@@ -237,7 +244,6 @@ $(function() {
           scaledSize: new google.maps.Size(25, 25)
         };
   
-        // Create a marker for each place.
         markers.push(new google.maps.Marker({
           map: map,
           icon: icon,
@@ -246,7 +252,6 @@ $(function() {
         }));
   
         if (place.geometry.viewport) {
-          // Only geocodes have viewport.
           bounds.union(place.geometry.viewport);
         } else {
           bounds.extend(place.geometry.location);
@@ -255,3 +260,17 @@ $(function() {
       map.fitBounds(bounds);
     });
   }
+  var settings = {
+	"async": true,
+	"crossDomain": true,
+	"url": "https://apidojo-booking-v1.p.rapidapi.com/properties/get-rooms?languagecode=en-us&travel_purpose=leisure&rec_children_qty=1%252C1&rec_children_age=5%252C7&recommend_for=3&departure_date=2019-03-15&rec_guest_qty=2%252C2&hotel_id=1720410&arrival_date=2019-03-13",
+	"method": "GET",
+	"headers": {
+		"x-rapidapi-host": "apidojo-booking-v1.p.rapidapi.com",
+		"x-rapidapi-key": "bcccdc32a8msh468d94790c9d5ddp1cd559jsnf7f5808d8c88"
+	}
+}
+
+$.ajax(settings).done(function (response) {
+	console.log(response);
+});
