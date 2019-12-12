@@ -8,7 +8,7 @@ const m = moment();
 
 
 $(function () {
-    var pTop = $('<p>').text('Date: ' + m.format('YYYY-MM-DD'));
+    var pTop = $('<p>').text('Date: ' + m.format('DD-MM-YYYY'));
 
     $('.heada').append(pTop);
    
