@@ -20,8 +20,7 @@ $(function() {
       var city = $("#citybar").val();
       $.ajax({
         url:
-          "https://app.ticketmaster.com/discovery/v2/events.json?apikey=QS5PYLoM9kjdMdl969ZTw7z5XJTZz0QA&keyword=" +
-          keyword + "&city=" + city,
+          "https://app.ticketmaster.com/discovery/v2/events.json?apikey=QS5PYLoM9kjdMdl969ZTw7z5XJTZz0QA&keyword=" + keyword + "&city=" + city,
         method: "GET"
       }).then(function(result) {
         var pFour = $("<p>").text("No Result");
