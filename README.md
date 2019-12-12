@@ -21,4 +21,4 @@ Choose by event or city. Also the user can book hotel rooms through a link on ou
 - Google Maps
 - Ticketmaster
 - Booking.com
-- Test
+- Moments
