@@ -16,3 +16,8 @@ We chose to create a website that would help people find events nearby to attend
 Allows users to choose events Nationwide.
 Choose by event or city. Also the user can book hotel rooms through a link on our site.
 
+## API's used
+
+- Google Maps
+- Ticketmaster
+- Booking.com
