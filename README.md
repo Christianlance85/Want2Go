@@ -22,6 +22,6 @@ Choose by event or city. Also the user can book hotel rooms through a link on ou
 - Ticketmaster
 - Booking.com
 
-## Third PArty API used
+## Third Party API used
 
 - Moment.js
