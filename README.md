@@ -31,3 +31,11 @@ Choose by event or city. Also the user can book hotel rooms through a link on ou
 ## Users Story
 
 People looking for events in their hometown, or people looking for events anywhere in the country.
+
+
+## Authors
+
+- Christian Lance
+- James Tankersley
+- Robert Jackson
+
