@@ -34,6 +34,6 @@ People looking for events in their hometown, or people looking for events anywhe
 
 ## Authors
 
-- Christain Lance
+- Christian Lance
 - James Tankersley
 - Robert Jackson
