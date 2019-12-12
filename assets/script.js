@@ -2,16 +2,16 @@ $(document).ready();
 
 var pTop = $( "<div class='time l-box pure-u-1 pure-u-md-1-2 pure-u-lg-1-4'>")
 const m = moment();
-console.log(m.format('dddd'));
+
 
 
 
 
 $(function () {
-    var pTop = $('<p>').text('Date: ' + m.format('dddd'));
+    var pTop = $('<p>').text('Date: ' + m.format('DD-MM-YYYY'));
 
     $('.heada').append(pTop);
-    console.log(now);
+   
 });
 $(function() {
     $("#search-Field").on("click", function() {
@@ -24,14 +24,12 @@ $(function() {
           keyword + "&city=" + city,
         method: "GET"
       }).then(function(result) {
-        console.log(result);
         var pFour = $("<p>").text("No Result");
         if (result._embedded === undefined) {
           eventDiv.append(pFour);
           return;
         }
         result._embedded.events.slice(0, 4).forEach(event => {
-            console.log(event);
           var eventDiv = $(
             "<div class='event l-box pure-u-1 pure-u-md-1-2 pure-u-lg-1-4'>"
           );
@@ -233,7 +231,6 @@ $(function() {
       var bounds = new google.maps.LatLngBounds();
       places.forEach(function(place) {
         if (!place.geometry) {
-          console.log("Returned place contains no geometry");
           return;
         }
         var icon = {
